@@ -3,6 +3,7 @@ from transform import transform_data
 from load import load_to_mongodb
 from config.settings import settings
 from loguru import logger
+from utils.logging_config import logger
 
 def run_etl_pipeline():
     """
