@@ -1,6 +1,7 @@
 import pandas as pd
 from config.settings import settings
 from loguru import logger
+from utils.logging_config import logger
 
 def extract_data(file_path: str, file_type: str) -> pd.DataFrame:
     """
