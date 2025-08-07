@@ -1,0 +1,6 @@
+pymongo
+python-dotenv
+pandas
+python-dateutil
+loguru
+pytest
