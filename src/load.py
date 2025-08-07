@@ -2,6 +2,7 @@ from pymongo import MongoClient
 from pandas import DataFrame
 from config.settings import settings
 from loguru import logger
+from utils.logging_config import logger
 
 def load_to_mongodb(data: DataFrame, collection_name: str = None):
     """
