@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import datetime
 from loguru import logger
-from utils.logging_config import logger
+from src.utils.logging_config import logger
 
 def transform_data(data: pd.DataFrame) -> pd.DataFrame:
     """
