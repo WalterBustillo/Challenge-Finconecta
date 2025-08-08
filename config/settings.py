@@ -5,7 +5,7 @@ load_dotenv()
 
 class Settings:
     # MongoDB Configuration
-    MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+    MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
     MONGO_DB = os.getenv("MONGO_DB", "etl_database")
     MONGO_COLLECTION = os.getenv("MONGO_COLLECTION", "etl_collection")
     

@@ -18,15 +18,14 @@ def run_etl_pipeline():
         
         # Transform
         transformed_data = transform_data(raw_data)
-        #print(transform_data.head())
-        """
-        # Load
+        print(transformed_data.head())
+        
+        #Load
         load_result = load_to_mongodb(transformed_data)
         
         logger.info("ETL Pipeline completed successfully")
         
         return load_result
-        """
 
     except Exception as e:
         #logger.error(f"ETL Pipeline failed: {str(e)}")
