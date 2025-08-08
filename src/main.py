@@ -13,13 +13,13 @@ def run_etl_pipeline():
         #logger.info("Starting ETL Pipeline")
         
         # Extract
-        print(settings.INPUT_FILE)
+        
         raw_data = extract_data(settings.INPUT_FILE, settings.FILE_TYPE)
-        print (raw_data.head())
-        """
+        
         # Transform
         transformed_data = transform_data(raw_data)
-        
+        #print(transform_data.head())
+        """
         # Load
         load_result = load_to_mongodb(transformed_data)
         

@@ -1,6 +1,7 @@
 pymongo
 python-dotenv
 pandas
+numpy
 python-dateutil
 loguru
 pytest

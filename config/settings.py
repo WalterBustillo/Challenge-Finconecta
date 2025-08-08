@@ -10,7 +10,7 @@ class Settings:
     MONGO_COLLECTION = os.getenv("MONGO_COLLECTION", "etl_collection")
     
     # File Configuration
-    INPUT_FILE = os.getenv("INPUT_FILE", "data/dirty_cafe_sales.csv")
+    INPUT_FILE = os.getenv("INPUT_FILE", "data/sample_data.csv")
     FILE_TYPE = os.getenv("FILE_TYPE", "csv") 
     
     # Logging Configuration
