@@ -3,8 +3,22 @@ import numpy as np
 from datetime import datetime
 from loguru import logger
 from src.utils.logging_config import logger
+from src.utils.validator import DataValidator
 
 def transform_data(data: pd.DataFrame) -> pd.DataFrame:
+
+    # Define Schema
+    schema = {
+        'transaction_id': 'str',
+        'item': 'str',
+        'quantity': 'float',
+        'price_per_unit':'float32',
+        'total_spent': 'float32',
+        'payment_method': 'str',
+        'location': 'str',
+        'transaction_date': 'datetime'
+    }
+
     """
     Transform the extracted data
   
@@ -94,6 +108,12 @@ def transform_data(data: pd.DataFrame) -> pd.DataFrame:
         transformed['hour'] = transformed['transaction_date'].dt.hour
         """ 
         logger.info("Data transformation completed successfully")
+
+        validator = DataValidator(schema)
+        if validator.validate_types(transformed):
+            # Continue ETL Process 
+            logger.info("Data transformation validated")
+            pass
 
         return transformed
         
