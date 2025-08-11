@@ -10,25 +10,25 @@ def run_etl_pipeline():
     Main function to run the ETL pipeline
     """
     try:
-        #logger.info("Starting ETL Pipeline")
+        logger.info("Starting ETL Pipeline")
         
         # Extract
         
         raw_data = extract_data(settings.INPUT_FILE, settings.FILE_TYPE)
-        
+
         # Transform
         transformed_data = transform_data(raw_data)
-        print(transformed_data.head())
-        
+        aux = transformed_data.head()
+        print(aux['payment_method'].tolist())
         #Load
-        load_result = load_to_mongodb(transformed_data)
+        load_result = load_to_mongodb(transformed_data,settings.MONGO_DB,settings.MONGO_COLLECTION)
         
         logger.info("ETL Pipeline completed successfully")
         
         return load_result
 
     except Exception as e:
-        #logger.error(f"ETL Pipeline failed: {str(e)}")
+        logger.error(f"ETL Pipeline failed: {str(e)}")
         raise
 
 if __name__ == "__main__":

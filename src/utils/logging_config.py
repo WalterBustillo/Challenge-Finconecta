@@ -8,18 +8,18 @@ def configure_logging():
     """
     logger.remove()  # Remove default handler
     
-    # Configuración básica del logger
+    # Configure basic handler
     logger.add(
         sys.stderr,
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}",
         level="INFO"
     )
     
-    # Configuración de log a archivo
+    # Configure log to file
     logger.add(
         settings.LOG_FILE,
-        rotation="10 MB",  # Rotar archivo cada 10MB
-        retention="30 days",  # Conservar logs por 30 días
+        rotation="10 MB",  # rotate file 10mb
+        retention="30 days",  # conserve log for 30 days
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}",
         level="DEBUG",
         encoding="utf-8"
@@ -27,5 +27,5 @@ def configure_logging():
     
     return logger
 
-# Inicializar el logger al importar el módulo
+# Lauch logger
 logger = configure_logging()

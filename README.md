@@ -24,10 +24,10 @@ Las columnas son:
 Se espera que las columnas tengan los siguientes formatos:
 
     Transaction ID - Object
-    Item - str
+    Item - Object
     Quantity - Numeric
     Price Per Unit - float
     Total Spent - float
-    Payment Method - str
-    Location - str
+    Payment Method - Object
+    Location - Object
     Transaction Date - date

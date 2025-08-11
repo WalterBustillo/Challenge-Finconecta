@@ -5,7 +5,7 @@ from config.settings import settings
 from loguru import logger
 from src.utils.logging_config import logger
 
-def load_to_mongodb(data: DataFrame, collection_name: str = None):
+def load_to_mongodb(data: DataFrame, db_name, collection_name: str = None):
     """
     Load transformed data into MongoDB
     """
@@ -13,8 +13,8 @@ def load_to_mongodb(data: DataFrame, collection_name: str = None):
         logger.info("Starting data load to MongoDB")
         # Connect to MongoDB
         client = MongoClient(settings.MONGO_URI)
-        db = client[settings.MONGO_DB]
-        collection = db[collection_name or settings.MONGO_COLLECTION]
+        db = client[db_name]
+        collection = db[collection_name]
         
         # Convert DataFrame to dictionary records
         data = data.where(pd.notnull(data), None)

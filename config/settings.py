@@ -8,6 +8,7 @@ class Settings:
     MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
     MONGO_DB = os.getenv("MONGO_DB", "etl_database")
     MONGO_COLLECTION = os.getenv("MONGO_COLLECTION", "etl_collection")
+    MONGO_COLLECTION_test = os.getenv("MONGO_COLLECTION_test", "test_collection")
     
     # File Configuration
     INPUT_FILE = os.getenv("INPUT_FILE", "data/sample_data.csv")
